@@ -1,0 +1,124 @@
+---
+const title = "The NFL Family";
+const description = "Your home for NFL news, game updates, standings, and community";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<style>
+			:root {
+				--nfl-red: #D50A0A;
+				--nfl-blue: #013369;
+				--nfl-white: #FFFFFF;
+				--nfl-dark: #1a1a1a;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background: linear-gradient(135deg, var(--nfl-blue) 0%, var(--nfl-dark) 100%);
+				color: var(--nfl-white);
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.container {
+				text-align: center;
+				padding: 2rem;
+				max-width: 800px;
+			}
+			.logo {
+				font-size: 4rem;
+				font-weight: 900;
+				letter-spacing: -2px;
+				margin-bottom: 0.5rem;
+				text-transform: uppercase;
+			}
+			.logo span {
+				color: var(--nfl-red);
+			}
+			.tagline {
+				font-size: 1.25rem;
+				color: #aaa;
+				margin-bottom: 3rem;
+				font-weight: 300;
+			}
+			.coming-soon {
+				background: var(--nfl-red);
+				color: white;
+				padding: 1rem 2rem;
+				border-radius: 4px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				display: inline-block;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin-top: 3rem;
+				width: 100%;
+			}
+			.card {
+				background: rgba(255,255,255,0.05);
+				padding: 1.5rem;
+				border-radius: 8px;
+				border: 1px solid rgba(255,255,255,0.1);
+			}
+			.card h3 {
+				color: var(--nfl-red);
+				margin-bottom: 0.5rem;
+				font-size: 1.1rem;
+			}
+			.card p {
+				color: #aaa;
+				font-size: 0.9rem;
+			}
+			footer {
+				margin-top: 4rem;
+				color: #666;
+				font-size: 0.85rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="logo">The <span>NFL</span> Family</h1>
+			<p class="tagline">{description}</p>
+			
+			<div class="coming-soon">Coming Soon</div>
+			
+			<div class="grid">
+				<div class="card">
+					<h3>🏈 Game News</h3>
+					<p>Latest updates from the gridiron</p>
+				</div>
+				<div class="card">
+					<h3>📊 Standings</h3>
+					<p>Division & Conference tables</p>
+				</div>
+				<div class="card">
+					<h3>📅 Schedule</h3>
+					<p>Game calendar & kickoff times</p>
+				</div>
+			</div>
+			
+			<footer>
+				Built with Astro • Deployed on Cloudflare Pages
+			</footer>
+		</div>
+	</body>
+</html>
